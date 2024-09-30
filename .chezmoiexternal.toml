@@ -1,0 +1,4 @@
+[".config/tmux"]
+	type = "git-repo"
+	url = "git@github.com:floatingman/.tmux.git"
+	refreshPeriod = "168h"
