@@ -2,7 +2,6 @@ local globals = {
 	mapleader = " ",
 	netrw_keepdir = 0,
 	netrw_banner = 0,
-    netrw_browse_split = 4,
     netrw_winsize = 30,
     netrw_liststyle = 3,
 	netrw_list_hide = (vim.fn["netrw_gitignore#Hide"]()) .. [[,\(^\|\s\s\)\zs\.\S\+]],
