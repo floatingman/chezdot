@@ -61,5 +61,5 @@ return {
 	},
 	keys = keys,
 	config = config,
-}   
+}
 

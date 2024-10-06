@@ -15,6 +15,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+require('core.globals')
+require('core.options')
+require('core.keymaps')
+require('core.autocmds')
+require('core.helpers')
 
 local opts = {
     defaults = {
@@ -37,16 +42,13 @@ local opts = {
         }
     },
     change_detection = {
-        notify = true,
+        notify = false,
     },
     -- automatically check for plugin updates
-    checker = { 
-        enabled = true 
+    checker = {
+        enabled = true
     },
 }
 
-require('core.globals')
-require('core.options')
-require('core.keymaps')
 -- Setup lazy.nvim
 require("lazy").setup('plugins', opts)
