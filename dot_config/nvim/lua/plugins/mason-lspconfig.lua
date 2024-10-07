@@ -15,6 +15,8 @@ local mason = {
 
 local mason_lspconfig = {
 	"williamboman/mason-lspconfig.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    { 'j-hui/fidget.nvim', opts = {} },
 	opts = {
 		ensure_installed = {
 			"solidity_ls",
