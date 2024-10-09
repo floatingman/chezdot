@@ -2,3 +2,6 @@
 	type = "git-repo"
 	url = "git@github.com:floatingman/.tmux.git"
 	refreshPeriod = "168h"
+[".config/nvim"]
+    type = "git-repo"
+    url = "https://github.com/floatingman/nvim.git"
