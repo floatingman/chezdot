@@ -1,7 +1,7 @@
 [".config/tmux"]
-	type = "git-repo"
-	url = "git@github.com:floatingman/.tmux.git"
-	refreshPeriod = "168h"
+type = "git-repo"
+url = "git@github.com:floatingman/.tmux.git"
+refreshPeriod = "168h"
 [".config/nvim"]
-    type = "git-repo"
-    url = "https://github.com/floatingman/nvim.git"
+type = "git-repo"
+url = "https://github.com/floatingman/lazyvim.git"
