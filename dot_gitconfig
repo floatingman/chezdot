@@ -61,7 +61,7 @@
     default = simple
     followTags = true
 [diff]
-    tool = vim
+    tool = nvim
     guitool = diffmerge
     submodule = log
     algorithm = patience
