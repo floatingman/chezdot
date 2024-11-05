@@ -1,3 +1,4 @@
 [ -f "$HOME/.profile" ] && source "$HOME/.profile"
 
 [ -f "$HOME/.bashrc" ] && source "$HOME/.bashrc"
+. "/home/dnewman/.deno/env"
