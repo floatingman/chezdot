@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/dnewman/.zsh/completions:"* ]]; then export FPATH="/home/dnewman/.zsh/completions:$FPATH"; fi
 # Set the shell to zsh
 # export SHELL=/bin/zsh
 
@@ -152,3 +154,4 @@ zinit light starship/starship
 # . "$HOME/.atuin/bin/env"
 
 # eval "$(atuin init zsh)"
+. "/home/dnewman/.deno/env"
