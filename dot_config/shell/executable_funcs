@@ -1618,3 +1618,22 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+kctx() {
+  (
+    cd ~/.kube/ || exit 1
+    # shellcheck disable=SC2012
+    KUBE=$(ls kube-* | fzf)
+    [[ -n "$KUBE" ]] && ln -sf "$KUBE" config
+  )
+}
+
+klctx() {
+    # shellcheck disable=SC1083
+    local SEARCH="${1:-$HOME/Downloads}"
+    [[ "$1" == "-" ]] && SEARCH="$HOME/.kube"
+    local KUBE=$(ls "$SEARCH" -p -t | grep -v / | fzf)
+    if [[ -n "$KUBE" ]]; then
+      export KUBECONFIG="${SEARCH%/}/$KUBE"
+    fi
+}
