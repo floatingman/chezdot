@@ -154,4 +154,6 @@ zinit light starship/starship
 # . "$HOME/.atuin/bin/env"
 
 # eval "$(atuin init zsh)"
-. "/home/dnewman/.deno/env"
+[[ -d "$HOME/.cargo" ]] && source "$HOME/.cargo/env"
+[[ -d "$HOME/.deno" ]] && source "/home/dnewman/.deno/env"
+
