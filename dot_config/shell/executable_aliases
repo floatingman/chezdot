@@ -103,7 +103,6 @@ alias \
 	weath='less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport'
 
 if _have yay; then
-    alias y="yay"
     alias yaysua="yay -Sua --noconfirm"              # update only AUR pkgs
     alias yaysyu="yay -Syu --noconfirm"              # update standard pkgs and AUR pkgs
 fi
