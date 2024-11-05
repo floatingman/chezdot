@@ -71,3 +71,4 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # [ -s "$HOME/.atuin/bin/env" ] && source "$HOME/.atuin/bin/env"
 . "$HOME/.cargo/env"
+. "/home/dnewman/.deno/env"
