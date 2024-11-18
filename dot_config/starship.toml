@@ -1,12 +1,12 @@
 # Inserts a blank line between shell prompts
 add_newline = true
 
-format = '''[╭── $os \([$username@$hostname](bold blue)\)-\[$directory\]-($kubernetes)(-$git_branch$git_metrics$git_status)(-$nix_shell)](blue) $cmd_duration
-[╰─](blue)[$shell](bold blue) '''
+# format = '''[╭── $os \([$username@$hostname](bold blue)\)-\[$directory\]-($kubernetes)(-$git_branch$git_metrics$git_status)(-$nix_shell)](blue) $cmd_duration
+# [╰─](blue)[$shell](bold blue) '''
 
 # A minimal left prompt
 # format = """$directory$character"""
-# format = """$os$username@$hostname $kubernetes $directory $git_branch $git_status """
+# format = """$os $username@$hostname $kubernetes $directory $git_branch $git_status """
 palette = "catppuccin_mocha"
 # move the rest of the prompt to the right
 right_format = '$status'
@@ -29,10 +29,10 @@ read_only = '  '
 format = '[$path]($style)[$read_only]($read_only_style)'
 
 [character]
-success_symbol = '[λ](bold blue)'
-error_symbol = '[λ](bold red)'
-# success_symbol = '[❯](bold blue)'
-# error_symbol = '[❯](bold red)'
+# success_symbol = '[λ](bold blue)'
+# error_symbol = '[λ](bold red)'
+success_symbol = '[❯](bold blue)'
+error_symbol = '[❯](bold red)'
 # Drop ugly default prompt characters
 # [character]
 # success_symbol = ''
@@ -41,7 +41,7 @@ error_symbol = '[λ](bold red)'
 [os]
 # format = '[$symbol](bold white) '   
 # format = '\[[$symbol]($style)\]'
-format = '[$symbol]($style)'
+format = '[$symbol]($style) '
 disabled = false
 
 [os.symbols]
@@ -56,15 +56,15 @@ style_user = 'white bold'
 style_root = 'red bold'
 # format = '[$user]($style) '
 # format = '\[[$user]($style)\]'
-format = '$user($style)'
+# format = '$user($style)'
 disabled = false
 show_always = true
 
 # Shows the hostname
 [hostname]
 ssh_only = false
-# format = 'on [$hostname](bold yellow) '
-format = '[$ssh_symbol](bold blue)$hostname'
+# format = ' on [$hostname](bold yellow) '
+# format = '[$ssh_symbol](bold blue)$hostname'
 disabled = false
 
 # Shows current git branch
@@ -113,8 +113,8 @@ deleted = '[󰍶 deleted=${count}](red)'
 symbol = '☸ '
 disabled = false
 detect_files = ['Dockerfile']
-# format = '[$context(\[$namespace\])]($style) '
-format = '\[[$symbol$context( \($namespace\))]($style)\]'
+format = '[$context(\[$namespace\])]($style) '
+# format = '\[[$symbol$context( \($namespace\))]($style)\]'
 
 # [docker_context]
 # disabled = true
@@ -123,10 +123,10 @@ format = '\[[$symbol$context( \($namespace\))]($style)\]'
 # disabled = true
 #
 # [python]
-# disabled = true
-#
+# disabled = false
+
 # [nodejs]
-# disabled = true
+# disabled = false
 #
 # [ruby]
 # disabled = true
@@ -147,7 +147,7 @@ bash_indicator = '\$'
 zsh_indicator = 'λ'
 unknown_indicator = '?'
 disabled = false
-format = '$indicator'
+format = '$indicator '
 
 [status]
 disabled = false
@@ -261,6 +261,7 @@ format = '\[[$symbol]($style)\]'
 format = '\[[$symbol$state( \($name\))]($style)\]'
 
 [nodejs]
+disabled = false
 format = '\[[$symbol]($style)\]'
 
 [ocaml]
