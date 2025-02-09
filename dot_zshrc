@@ -100,6 +100,15 @@ command -v direnv > /dev/null 2>&1 && eval "$(direnv hook zsh)"
 source <(fzf --zsh)
 # bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'                # find file and cd to selected directory
 
+# Enable Ctrl-xe to edit command line
+autoload -U edit-command-line
+# Emacs style
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+# Vi style:
+# zle -N edit-command-line
+# bindkey -M vicmd v edit-command-line
 
 
 # ZSH Plugins
