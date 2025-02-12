@@ -71,5 +71,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # [ -s "$HOME/.atuin/bin/env" ] && source "$HOME/.atuin/bin/env"
 [[ -d "$HOME/.cargo" ]] && source "$HOME/.cargo/env"
-[[ -d "$HOME/.deno" ]] && source "/home/dnewman/.deno/env"
+[[ -d "$HOME/.deno" ]] && source "$HOME/.deno/env"
 
+# Added by LM Studio CLI (lms)
+[[ -d "$HOME/.lmstudio/bin" ]] && export PATH="$PATH:$HOME/.lmstudio/bin"
