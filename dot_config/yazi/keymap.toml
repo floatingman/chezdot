@@ -262,6 +262,8 @@ keymap = [
 ]
 
 prepend_keymap = [
+  # https://github.com/yazi-rs/plugins/tree/main/smart-enter.yazi
+  { on = "l", run = "plugin smart-enter", desc = "Enter the child directory if it exists or open the file" },
   # https://github.com/yazi-rs/plugins/tree/main/chmod.yazi
   { on = [
     "c",
