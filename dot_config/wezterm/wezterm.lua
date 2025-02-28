@@ -14,14 +14,25 @@ config.font = wezterm.font("JetBrains Mono")
 -- config.color_scheme = "Solarized (light) (terminal.sexy)"
 -- and finally, return the configuration to wezterm
 
-if sun_times.up then
-	-- Apply light theme
-	config.color_scheme = "Catppuccin Latte"
-	-- config.color_scheme = "AdventureTime"
-else
-	-- Apply dark theme
-	config.color_scheme = "Catppuccin Macchiato"
-	-- config.color_scheme = "Solarized Dark"
-end
+local light_scheme = "Ayu Light (Gogh)"
+local dark_scheme = "Ayu Dark (Gogh)"
 
-return config
+wezterm.on("toggle-color-scheme", function(window, pane)
+	local overrides = window:get_config_overrides() or {}
+	if overrides.color_scheme == light_scheme then
+		overrides.color_scheme = dark_scheme
+	else
+		overrides.color_scheme = light_scheme
+	end
+	window:set_config_overrides(overrides)
+end)
+
+return {
+	keys = {
+		{
+			key = "m",
+			mods = "SHIFT|CTRL",
+			action = wezterm.action({ EmitEvent = "toggle-color-scheme" }),
+		},
+	},
+}
