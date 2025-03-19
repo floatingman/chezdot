@@ -5,9 +5,6 @@ Host 45.33.107.248
 Host ec2-*
     ProxyJump 45.33.107.248
 
-Host "52.*", "18.*", "13.*", "3.*"
-    ProxyJump 45.33.107.248
-
 Host *
   AddKeysToAgent yes
   ForwardAgent yes
