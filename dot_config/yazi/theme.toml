@@ -12,8 +12,8 @@
 
 [flavor]
 # TODO: set
-dark = "catppuccin-frappe"
+dark = "ayu-dark"
 # TODO: set
-light = "catppucin-latte"
+light = "catppuccin-latte"
 
 # : }}}
