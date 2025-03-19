@@ -2,7 +2,7 @@
 # vim :set ts=2 sw=2 sts=2 et :
 
 # Initialise asdf-vm
-if [ -e "${HOME}/.asdf/asdf.sh" ]; then
-    export ASDF_DIR="${HOME}/.asdf"
-    source "${ASDF_DIR}/asdf.sh"
+if [ -e "/usr/bin/asdf" ]; then
+    export ASDF_DATA_DIR="${HOME}/.asdf"
+    export PATH="$ASDF_DATA_DIR/shims:$PATH"
 fi
