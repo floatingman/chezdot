@@ -46,10 +46,6 @@ fi
 # Functions
 [[ -f ~/.config/shell/funcs ]] && . ~/.config/shell/funcs
 
-# ASDF
-[[ -f "$HOME/.asdf/asdf.sh" ]] && . "$HOME/.asdf/asdf.sh"
-[[ -f "$HOME/.asdf/completions/asdf.bash" ]] && . "$HOME/.asdf/completions/asdf.bash"
-
 # completion for dotfiles command
 alias dotfiles='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 [[ $(type -t __git_complete) = function ]] && __git_complete dotfiles git
@@ -95,17 +91,22 @@ fi
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 # Load starship
-# eval "$(starship init bash)"
+eval "$(starship init bash)"
 
 # all my terminals support color so let's colorize this alllllll
-PS1="\[\e[33m\][\t] \`if [[ \$? = '0' ]]; then echo \"\[\e[0;32m\]\"; else echo \"\[\e[0;31m\]\"; fi\`\u@\h\[\e[0m\]> "
+# PS1="\[\e[33m\][\t] \`if [[ \$? = '0' ]]; then echo \"\[\e[0;32m\]\"; else echo \"\[\e[0;31m\]\"; fi\`\u@\h\[\e[0m\]> "
 # modify the title bar, too
-PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+# PS1="\[\e]0;\u@\h: \w\a\]$PS1"
 
 [[ -d "$HOME/.cargo/" ]] && . "$HOME/.cargo/env"
 [[ -d "$HOME/.deno/" ]] && . "$HOME/.deno/env"
 # Added by LM Studio CLI (lms)
 [[ -d "$HOME/.lmstudio/" ]] && export PATH="$PATH:$HOME/.lmstudio/bin"
+
+if [ -e "/usr/bin/asdf" ]; then
+	export ASDF_DATA_DIR="${HOME}/.asdf"
+	export PATH="$ASDF_DATA_DIR/shims:$PATH"
+fi
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 bleopt highlight_syntax=true
